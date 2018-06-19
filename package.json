@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/devynnpalmer/UWFund/issues"
   },
-  "homepage": "https://github.com/devynnpalmer/UWFund#readme"
+  "homepage": "https://github.com/devynnpalmer/UWFund#readme",
+  "dependencies": {
+    "fs-extra": "^6.0.1",
+    "ganache-cli": "^6.1.3",
+    "mocha": "^5.2.0",
+    "web3": "^1.0.0-beta.26"
+  }
 }
