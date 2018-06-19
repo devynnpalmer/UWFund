@@ -7,6 +7,11 @@ contract FundFactory {
         address newFund = new Fund(minimum, msg.sender);
         deployedFunds.push(newFund);
     }
+
+    function getDeployedFunds() public view returns (address[]) {
+        return deployedFunds;
+    }
+
 }
 
 contract Fund {
