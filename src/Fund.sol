@@ -1,5 +1,14 @@
 pragma solidity ^0.4.17;
 
+contract FundFactory {
+    address[] public deployedFunds;
+
+    function createFund(uint minimum) public {
+        address newFund = new Fund(minimum, msg.sender);
+        deployedFunds.push(newFund);
+    }
+}
+
 contract Fund {
     struct Request {
         string description;
@@ -21,8 +30,8 @@ contract Fund {
         _;
     }
 
-    function Fund(uint minimum) public {
-        manager = msg.sender;
+    function Fund(uint minimum, address creator) public {
+        manager = creator;
         minimumContribution = minimum;
     }
 
