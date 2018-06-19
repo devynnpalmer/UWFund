@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const solc = require('solc');
 
-const lotteryPath = path.resolve(__dirname, 'Lottery.sol');
-const source = fs.readFileSync(lotteryPath, 'utf8');
+const fundPath = path.resolve(__dirname, 'Fund.sol');
+const source = fs.readFileSync(fundPath, 'utf8');
 
-module.exports = solc.compile(source, 1).contracts[':Lottery'];
+module.exports = solc.compile(source, 1).contracts[':Fund];
