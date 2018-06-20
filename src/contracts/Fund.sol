@@ -28,7 +28,7 @@ contract Fund {
     address public manager;
     uint public minimumContribution;
     mapping(address => bool) public approvers;
-    uint approversCount;
+    uint public approversCount;
 
     modifier restricted() {
         require(msg.sender == manager);

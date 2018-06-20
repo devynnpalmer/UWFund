@@ -34,4 +34,18 @@ describe('Funds', () => {
         assert.ok(factory.options.address);
         assert.ok(fund.options.address);
     });
+
+    it('marks caller as the fund manager', async () => {
+        const manager = await fund.methods.manager().call();
+        assert.equal(accounts[0], manager);
+    });
+
+    it('allows people to contribute money and marks them as approvers' async () => {
+        await fund.methods.contribute().send({
+            value: '200',
+            from: accounts[1]
+        });
+        const isContributor = await fund.methods.approvers(accounts[1]).call();
+        assert(isContributor);
+    });
 });
